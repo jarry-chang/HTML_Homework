@@ -8,68 +8,62 @@
     <title>Document</title>
     <style>
         #divleft {
+            width: 50%;
+            height: 100%;
             background-color: #5CB6E7;
             position: fixed;
-            width: 50%;
         }
 
         #divright {
-            background-color: white;
             width: 50%;
             margin-left: 50%;
-            display: block;
+            background-color: white;
+            position: absolute;
+            text-align: center;
         }
 
-        p {
-            display: block;
-
-        }
-         .imga{
-            text-align:center;
-         }
-        .facility {
-            padding: 50px;
-
-        }
-
-        .opentime {
-            padding: 50px;
-        }
-
-        .buy_tickets_list {
-            padding: 50px;
-        }
-
-        .advisory_Service {
-            padding: 50px;
-        }
-
-        .table_list {
-        
-        }
-    
         .ending_img {
+            background-color: white;
+            opacity: 0.4;
+            visibility: hidden;
             padding: 50px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50;
         }
-        #set_in {
-            text-align:center;
+
+        .div_position {
+            /* text-align: left; */
+        }
+
+        #img_discoloration:hover {
+            opacity: 0.7;
+        }
+
+        td {
+            padding: 15px;
+
         }
     </style>
 </head>
 
 <body>
-    <div id="divleft">
-        <img  src="img/foreign_parts_left.png" alt="">
+    <div>
+        <img src="img/foreign_parts_left.png" id="divleft" alt="">
     </div>
+
     <div id="divright" style="position: relative;">
-       <div>
-        <p><img id="imga" src="img/logo_01.png" alt=""></p>
-        <p><img src="img/date_01.png" alt=""></p>
-        <p><img src="img/mark_sep_01.png" alt=""></p>
-        <h2 id="set_in">設施介紹</h2>
+        <div>
+            <p><img id="imga" src="img/logo_01.png" alt=""></p>
+            <p><img src="img/date_01.png" alt=""></p>
+            <p><img src="img/mark_sep_01.png" alt=""></p>
+
+            <h2 id="set_in">設施介紹</h2>
+
         </div>
-    
-        <div class="facility">
+
+        <div class="div_position">
             <p>來東京冒險吧！</p>
             <p>航海王史上首創！！</p>
             <p>大型主題樂園！！</p>
@@ -79,7 +73,7 @@
         </div>
         <p><img src="img/mark_sep_01.png" alt=""></p>
         <h2>營業時間</h2>
-        <div class="opentime">
+        <div class="div_position">
             <p>營業時間　10:00～22:00　（最後入場時間21:00）</p>
             <p>休假日 全年無休</p>
             <p>營業時間: <a href="http://onepiecetower.tokyo/">http://onepiecetower.tokyo/</a></p>
@@ -87,9 +81,12 @@
             <p>贊助: 株式會社Seven Eleven Japan</p>
         </div>
         <p><img src="img/mark_sep_01.png" alt=""></p>
+
         <h2>門票</h2>
-        <p><img src="img/banner_japanican.jpg" class="buy_tickets_img" alt=""></p>
-        <div class="buy_tickets_list">
+
+        <p><img src="img/banner_japanican.jpg" id="img_discoloration" alt=""></p>
+
+        <div class="div_position">
             <p>當日票券：成年3,200日圓　兒童（4～12歳）1,600日圓</p>
             <p>預售票：成年3,000日圓　兒童1,500日圓</p>
             <br>
@@ -107,20 +104,20 @@
         </div>
         <p><img src="img/mark_sep_01.png" alt=""></p>
         <h2>諮詢處</h2>
-        <div class="advisory_Service">
+        <div class="div_position">
             <p>開設事務局</p>
             <p>※窗口業務對應的時間：10:00～17:00（星期六、日和節假日除外） </p>
             <p>info@onepiecetower.tokyo（諮詢時，請註明您的聯繫方式。）</p>
         </div>
         <p><img src="img/mark_sep_01.png" alt=""></p>
         <h2>交通指南</h2>
-        <div class="traffic">
+        <div class="div_position">
             <p>地址：東京都港區芝公園4丁目2－8　東京鐵塔 Foot Town內</p>
-            <table border="1" style="border-collapse:collapse;text-align:center;" class="table_list" id="table_frame">
-                <tr>
-                    <td style="background-color:#5CB6E7">交通路線</td>
-                    <td style="background-color:#5CB6E7">下車站 / 出口 </td>
-                    <td style="background-color:#5CB6E7">所需時間</td>
+            <table border="1" style="border-collapse: collapse; text-align: center; width:100%;">
+                <tr></tr>
+                <td style="background-color:#5CB6E7">交通路線</td>
+                <td style="background-color:#5CB6E7">下車站 / 出口 </td>
+                <td style="background-color:#5CB6E7">所需時間</td>
                 </tr>
 
                 <tr>
@@ -156,9 +153,9 @@
             <p>* 第一個小時 / 600日圓。之後每30分鐘加收300日圓。</p>
             <p>* 停車場營業時間 / 9:00～22:00（最後進場21:45）</p>
         </div>
-        <div class="ending_img">
-            <p><img src="img/logo_footer_01.png" alt=""></p>
-            <p><img src="img/copyright_01.png" alt=""></p>
+        <div>
+            <img src="img/logo_footer_01.png" alt="">
+            <img src="img/copyright_01.png" alt="">
         </div>
     </div>
 </body>
