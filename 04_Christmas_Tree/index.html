@@ -11,17 +11,26 @@
 </head>
 
 <body>
-
+    <!-- 先建立一個button定義 -->
+    <button onclick="showMessage()">請輸入層數</button>
+    <!-- 最下方elrme使用 -->
+    <p id="pSquare"></p>
     <script>
-        // 分解動作
-        // 1. 觀察列和星星數量的變化: 星星數量 = 最終列 + 最終列 - 1
-        //    1＝>1、2=>3、3=>5、4=>7、5=>9
-        // 2. 觀察列和空白數量的變化: 假設以四列舉例
-        //    第一列：1=>3、5=>7
-        //    第二列：1=>2、6=>7
-        //    第三列：1=>1、7=>7
-        //    第四列：
-        // 3. 觀察星星中間位置: 中間位置 = 最終列
+        function showMessage() {
+            var nub = prompt("請輸入層數","");
+        
+        var start = "";
+        for (var i = 1; i <= nub; i++) {
+            for (var j = i; j < nub; j++) {
+                start = start + "&nbsp";
+            }
+            for (var k = 1; k < i * 2; k++) {
+                start = start + "*";
+            }
+            start = start + "<br>"
+        }
+        document.getElementById("pSquare").innerHTML = start;
+    }
     </script>
 </body>
 
