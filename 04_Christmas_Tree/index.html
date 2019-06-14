@@ -17,21 +17,22 @@
     <p id="pSquare"></p>
     <script>
         function showMessage() {
-            var nub = prompt("請輸入層數","");
-        
-        var start = "";
-        for (var i = 1; i <= nub; i++) {
-            for (var j = i; j < nub; j++) {
-                start = start + "&nbsp";
+            var nub = prompt("請輸入層數", "");
+
+            var start = "";
+            for (var i = 1; i <= nub; i++) {
+                for (var j = i; j < nub; j++) {
+                    start = start + "&nbsp";
+                }
+                for (var k = 1; k < i * 1 + 1; k++) {
+                    start = start + "*";
+                }
+                start = start + "<br>"
             }
-            for (var k = 1; k < i * 2; k++) {
-                start = start + "*";
-            }
-            start = start + "<br>"
+            document.getElementById("pSquare").innerHTML = start;
         }
-        document.getElementById("pSquare").innerHTML = start;
-    }
     </script>
 </body>
+<!--i * 2  -->
 
 </html>
