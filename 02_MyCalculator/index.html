@@ -4,12 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <title>My Calculator</title>
+
+    <style>
+        tr {
+            align-content: center;
+        }
+    </style>
 </head>
 
 <body>
 
-   <p><a href="https://www.desmos.com/scientific" target="_blank">參考網路上面的計算機</a></p>
-    
+    <p><a href="https://www.desmos.com/scientific" target="_blank">參考網路上面的計算機</a></p>
+    <table border=1>
+        <tr>
+            <td align="center" colspan="6"><input align="right" type="text" value="0" id="compute_box"></td>
+            <td><input type="button" value="MC" onClick="symbol('MC')"> </td>
+        </tr>
+
+
+        <tr>
+            <td> <input type="button" value="7" onClick="number('7')"> </td>
+            <td> <input type="button" value="8" onClick="number('8')"> </td>
+            <td> <input type="button" value="9" onClick="number('9')"> </td>
+            <td> <input type="button" value="+" onClick="symbol('+')"> </td>
+        </tr>
+
+        <tr>
+            <td> <input type="button" value="4" onClick="number('4')"> </td>
+            <td> <input type="button" value="5" onClick="number('5')"> </td>
+            <td> <input type="button" value="6" onClick="number('6')"> </td>
+            <td> <input type="button" value="-" onClick="symbol('-')"> </td>
+        </tr>
+
+        <tr>
+            <td> <input type="button" value="1" onClick="number('1')"> </td>
+            <td> <input type="button" value="2" onClick="number('2')"> </td>
+            <td> <input type="button" value="3" onClick="number('3')"> </td>
+            <td> <input type="button" value="*" onClick="symbol('*')"> </td>
+        </tr>
+
+        <tr>
+            <td> <input type="button" value="0" onClick="number('0')"> </td>
+            <td> <input type="button" value="." onClick="number('.')"> </td>
+            <td> <input type="button" value="=" onClick="equal()"> </td>
+            <td> <input type="button" value="/" onClick="symbol('/')"> </td>
+        </tr>
+    </table>
+
+    <script>
+        // 暫存
+        var strOper = 0;
+        var temp = 0;
+        // compute_box 連動點選數值，數字
+        function number(str_box) {
+            if (document.getElementById("compute_box").value == 0) {
+                document.getElementById("compute_box").value = str_box;
+            } else {
+                document.getElementById("compute_box").value += str_box;
+            }
+        }
+        // 運算符號
+        function symbol(str_box) {
+            equal();
+            valueA = document.getElementById("compute_box").value;
+            strOper = str_box;
+            document.getElementById("compute_box").value = 0;
+        }
+
+        function equal() {
+            switch (strOper) {
+                case '+':
+                    document.getElementById("compute_box").value = parseFloat(valueA) + parseFloat(document.getElementById("compute_box").value);
+                    break;
+                case '-':
+                    document.getElementById("compute_box").value = parseFloat(valueA) - parseFloat(document.getElementById("compute_box").value);
+                    break;
+                case '*':
+                    document.getElementById("compute_box").value = parseFloat(valueA) * parseFloat(document.getElementById("compute_box").value);
+                    break;
+                case '/':
+                    document.getElementById("compute_box").value = parseFloat(valueA) / parseFloat(document.getElementById("compute_box").value);
+                    break;
+                case 'MC':
+                    temp = 0;
+                    strOper = 0;
+                    document.getElementById("compute_box").value = '0';
+                    break;
+                default:
+            }
+
+        }
+
+    </script>
 </body>
 
 </html>
